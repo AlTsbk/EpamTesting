@@ -34,7 +34,9 @@ namespace AircompanyTests.Tests
         public bool GetMilitaryTypeIsTransport()
         {
             foreach (MilitaryPlane militaryPlane in airport.GetTransportMilitaryPlanes().ToList())
+            {
                 return militaryPlane.GetPlaneTypeIs() == MilitaryType.TRANSPORT;
+            }
             return false;
         }
 
