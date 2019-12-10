@@ -5,3 +5,7 @@
 /target
 /.vs
 /packages
+*/bin
+*/target
+*/.vs
+*/packages
