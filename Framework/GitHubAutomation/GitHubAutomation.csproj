@@ -38,6 +38,9 @@
     <Reference Include="AngleSharp, Version=0.13.0.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
       <HintPath>..\packages\AngleSharp.0.13.0\lib\net46\AngleSharp.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
@@ -74,9 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Driver\DriverSingleton.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Pages\MainPage.cs" />
     <Compile Include="Services\CreatingOrder.cs" />
+    <Compile Include="Services\CreatingUser.cs" />
     <Compile Include="Services\TestDataReader.cs" />
     <Compile Include="Tests\GeneralConfig.cs" />
     <Compile Include="Tests\WebTests.cs" />

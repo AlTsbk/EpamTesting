@@ -17,9 +17,16 @@ namespace GitHubAutomation.Pages
             this.driver = driver;
         }
 
+
         public IWebElement ageCheckBox => GetElement("//*[@for='chk-age']");
         public IWebElement submitBtn => GetElement("//*[@name='btn-submit']");
         public IWebElement returnPlaceCheckBox => GetElement("//*[@id='locations-wrapper']/div[1]");
+        public IWebElement logInBtn => GetElement("//*[@id='primnav--acct']/li[2]/a");
+        public IWebElement submitLogInBtn => GetElement("//*[@id='account_login_button']");
+        public IWebElement ageInput => GetElement("//*[@id='ae-search']/div[3]/div[5]/input[2]");
+        public IWebElement emailInput => GetElement("//*[@id='member_username']");
+        public IWebElement passwordInput => GetElement("//*[@id='member_password']");
+        public string logInErrorMessage => GetText("//*[@id='member-response-left']");
         public string errorMessage => GetText("//*[@class='ui-warn-flag-title']");
 
         public MainPage FillInPickUpFields(Location location)
@@ -27,6 +34,36 @@ namespace GitHubAutomation.Pages
             selectItem("//*[@value='" + location.Country + "']");
             selectItem("//*[@id='" + location.City + "']");
             selectItem("//*[@id='" + location.Place + "']");
+            return this;
+        }
+
+        public MainPage InsertValueInAgeInput(string value)
+        {
+            ageInput.SendKeys(value);
+            return this;
+        }
+
+        public MainPage InsertValueInEmailInput(string value)
+        {
+            emailInput.SendKeys(value);
+            return this;
+        }
+
+        public MainPage InsertValueInPasswordInput(string value)
+        {
+            passwordInput.SendKeys(value);
+            return this;
+        }
+
+        public MainPage ClickOnLogInBtn()
+        {
+            logInBtn.Click();
+            return this;
+        }
+
+        public MainPage ClickOnSubmitLogInBtn()
+        {
+            submitLogInBtn.Click();
             return this;
         }
 
